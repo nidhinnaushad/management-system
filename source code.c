@@ -7,20 +7,17 @@
 
 COORD coord = {0,0};
 
-void gotoxy(int x,int y)
-{
+void gotoxy(int x,int y){
     coord.X = x;
     coord.Y = y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
 }
 
-int main()
-{
+int main(){
     FILE *fp, *ft; 
     char another, choice;
     
-    struct emp
-    {
+    struct emp{
         char name[40]; 
         int age; 
         float bs; 
@@ -33,12 +30,10 @@ int main()
     long int recsize; 
 
     fp = fopen("EMP.DAT","rb+");
-    if(fp == NULL)
-    {
+    if(fp == NULL){
         fp = fopen("EMP.DAT","wb+");
-        if(fp == NULL)
-        {
-            printf("Connot open file");
+        if(fp == NULL){
+            printf("Cannot open file");
             exit(1);
         }
     }
@@ -50,17 +45,17 @@ int main()
     {
         system("cls"); 
         gotoxy(30,10); 
-        printf("1. Add Record"); 
+        printf("1. Add"); 
         gotoxy(30,12);
-        printf("2. List Records"); 
+        printf("2. List"); 
         gotoxy(30,14);
-        printf("3. Modify Records"); 
+        printf("3. Modify"); 
         gotoxy(30,16);
-        printf("4. Delete Records"); 
+        printf("4. Delete"); 
         gotoxy(30,18);
         printf("5. Exit"); 
         gotoxy(30,20);
-        printf("Your Choice: "); // enter the choice 1, 2, 3, 4, 5
+        printf("Choice: "); // enter the choice 1, 2, 3, 4, 5
         fflush(stdin); 
         choice  = getche(); // get the input from keyboard
         switch(choice)
@@ -72,11 +67,11 @@ int main()
             another = 'y';
             while(another == 'y')  
             {
-                printf("\nEnter name: ");
+                printf("\nname: ");
                 scanf("%s",e.name);
-                printf("\nEnter age: ");
+                printf("\nage: ");
                 scanf("%d", &e.age);
-                printf("\nEnter basic salary: ");
+                printf("\nsalary: ");
                 scanf("%f", &e.bs);
 
                 fwrite(&e,recsize,1,fp);
@@ -91,7 +86,7 @@ int main()
             rewind(fp); 
             while(fread(&e,recsize,1,fp)==1)  
             {
-                printf("\n%s %d %.2f",e.name,e.age,e.bs); //print the name, age and salary
+                printf("\n%s %d %.2f",e.name,e.age,e.bs); 
             }
             getch();
             break;
@@ -101,14 +96,14 @@ int main()
             another = 'y';
             while(another == 'y')
             {
-                printf("Enter the employee name to modify: ");
+                printf("Employee name to modify: ");
                 scanf("%s", empname);
                 rewind(fp);
                 while(fread(&e,recsize,1,fp)==1) 
                 {
                     if(strcmp(e.name,empname) == 0)  
                     {
-                        printf("\nEnter new name,age and bs: ");
+                        printf("\nEnter new name,age and salary: ");
                         scanf("%s%d%f",e.name,&e.age,&e.bs);
                         fseek(fp,-recsize,SEEK_CUR); 
                         fwrite(&e,recsize,1,fp); 
@@ -125,7 +120,7 @@ int main()
             another = 'y';
             while(another == 'y')
             {
-                printf("\nEnter name of employee to delete: ");
+                printf("\nName of employee to be deleted: ");
                 scanf("%s",empname);
                 ft = fopen("Temp.dat","wb");  // temporary storage
                 rewind(fp); 
