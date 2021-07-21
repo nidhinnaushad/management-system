@@ -31,4 +31,4 @@ output can be given to this code, then it can also be used for
 security. More for example, Image processing is becoming a huge 
 trend, employees can be ensured to put on a helmet using this tech 
 and that can also be tabulated by integrating into this code.
-**[Explanation (Youtube)](https://youtu.be/TTa9d_7Nzm4)**
+**[Explanation](https://youtu.be/TTa9d_7Nzm4)**
