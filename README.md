@@ -31,4 +31,5 @@ output can be given to this code, then it can also be used for
 security. More for example, Image processing is becoming a huge 
 trend, employees can be ensured to put on a helmet using this tech 
 and that can also be tabulated by integrating into this code.
-**[Explanation](https://youtu.be/TTa9d_7Nzm4)**
+#
+**Reference : [Stack Overflow](https://stackoverflow.com/questions/39606186/python-class-employee-management-system), [YouTube](https://www.youtube.com/watch?v=rG_RwGQZvgg) and [Geeks for Geeks](https://www.geeksforgeeks.org/program-for-employee-management-system/)**<br/>
