@@ -1,5 +1,5 @@
 # Employee-Management-System
-Data Management: add, list,  modify and delete records.
+Program in C language for Data Management: add, list,  modify and delete records.
 # Abstract:
 In this project, you can manage employee records – add, list, 
 modify and delete records. The main use of an employee 
